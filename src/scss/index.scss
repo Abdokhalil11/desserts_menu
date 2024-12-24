@@ -1,0 +1,42 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+@use "./desserts" as *;
+@use "./cart-list" as *;
+@use "./modal" as *;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  transition: 0.3s;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: $background-color;
+  padding-top: 100px;
+}
+
+.container {
+  padding: {
+    left: 15px;
+    right: 15px;
+  }
+  margin: {
+    left: auto;
+    right: auto;
+  }
+  @include containerResponsive();
+}
+
+main {
+  .container {
+    align-items: flex-start;
+    gap: 30px;
+    display: flex;
+    @include responsive(small) {
+      flex-wrap: wrap;
+    }
+  }
+}

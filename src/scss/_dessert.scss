@@ -1,0 +1,95 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+
+.dessert {
+  .image {
+    img {
+      border: 3px solid transparent;
+      border-radius: 10px;
+      max-width: 100%;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+  }
+  .addCart {
+    height: 50px;
+    width: 200px;
+    overflow: hidden;
+    position: relative;
+    margin-inline: auto;
+    margin-top: -30px;
+    border-radius: 50px;
+    background-color: white;
+    border: 2px solid $cat-color;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      top: 0;
+      .cart {
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        z-index: 9;
+        position: relative;
+        p {
+          color: $text-color;
+          font-weight: 600;
+        }
+      }
+      .count {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 50px;
+        padding-inline: 15px;
+        button {
+          border: 2px solid white;
+          background-color: transparent;
+          width: 27px;
+          height: 27px;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          img {
+            width: 15px;
+          }
+        }
+        p {
+          color: white;
+        }
+      }
+    }
+  }
+  .text {
+    .cat {
+      color: $cat-color;
+      display: block;
+    }
+    .name {
+      color: $text-color;
+      font-weight: 500;
+    }
+    .price {
+      color: $main-color;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+}
+.dessert.active {
+  .addCart {
+    background-color: $main-color;
+    border: none;
+    .wrapper {
+      top: -50px;
+    }
+  }
+  .image {
+    img{
+      border-color:$main-color;
+    }
+  }
+}

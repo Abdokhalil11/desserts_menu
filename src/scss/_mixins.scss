@@ -1,0 +1,28 @@
+@mixin responsive($media) {
+  @if ($media == small) {
+    @media (max-width: 776px) {
+      @content;
+    }
+  } @else if ($media == medium) {
+    @media (max-width: 991px) {
+      @content;
+    }
+  }
+  @if ($media == large) {
+    @media (max-width: 1170px) {
+      @content;
+    }
+  }
+}
+
+@mixin containerResponsive() {
+  @media (min-width: 786px) {
+    width: 750px;
+  }
+  @media (min-width: 991px) {
+    width: 970px;
+  }
+  @media (min-width: 1200px) {
+    width: 1170px;
+  }
+}

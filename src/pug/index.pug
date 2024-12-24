@@ -1,0 +1,33 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Menu 
+    link(rel="stylesheet", href="./style.min.css")
+  body 
+    main
+      .container
+        .desserts 
+          h1 Desserts
+          .content
+          
+        .cart-list
+          h2 Your Cart
+            span (0)
+          .items 
+          .content 
+            .content-1
+              img(src='./assets/images/cake.svg')
+              p Your added items will appear here
+    .overlay
+    .modal
+      .image 
+        img(src="./assets/images/confirm.svg")
+      .text
+        h3 Order Confirm
+        p We hope to enjoy your food
+      .order-list
+        .orders
+        button.hide-modal Start New Order
+    include ./scripts.pug
